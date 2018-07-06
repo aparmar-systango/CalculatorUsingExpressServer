@@ -1,4 +1,5 @@
 var express = require('express');
+var path = require('path');
 var app = express();
 app.get('/calculator/add',function(req,res){
     var num1 = Number(req.query.num1);
@@ -67,4 +68,11 @@ app.get('/calculator/divide',function(req,res){
     }
     res.send({result: result});
 });
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/client/index.html'));
+});
+app.get('/index.html', function(req, res) {
+    res.sendFile(path.join(__dirname + '/client/index.html'));
+});
+
 app.listen(3000,()=>console.log("Express Server listening on port Number : 3000"));
