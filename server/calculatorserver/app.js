@@ -74,5 +74,7 @@ app.get('/', function(req, res) {
 app.get('/index.html', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/index.html'));
 });
-
+app.get('/ArithmeticOperation.js',function(req,res){
+    res.sendFile(path.join(__dirname+"/client/ArithmeticOperation.js"));
+});
 app.listen(3000,()=>console.log("Express Server listening on port Number : 3000"));
